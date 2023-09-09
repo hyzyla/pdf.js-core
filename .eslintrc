@@ -1,64 +1,69 @@
 {
   "parserOptions": {
     "ecmaVersion": 2022,
-    "sourceType": "module",
+    "sourceType": "module"
   },
 
   "plugins": [
     "import",
     "json",
-    "mozilla",
     "no-unsanitized",
     "sort-exports",
     "unicorn",
+    "jest"
   ],
 
-  "extends": [
-    "plugin:json/recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["plugin:json/recommended", "plugin:prettier/recommended"],
 
   "env": {
     "browser": true,
     "es2022": true,
     "worker": true,
     "amd": true,
+    "jest/globals": true
   },
 
   "globals": {
     "PDFJSDev": false,
-    "exports": false,
+    "exports": false
   },
 
   "rules": {
     // Plugins
     "import/export": "error",
     "import/exports-last": "error",
-    "import/extensions": ["error", "always", { "ignorePackages": true, }],
+    "import/extensions": ["error", "always", { "ignorePackages": true }],
     "import/first": "error",
     "import/named": "error",
     "import/no-cycle": "error",
     "import/no-empty-named-blocks": "error",
     "import/no-mutable-exports": "error",
     "import/no-self-import": "error",
-    "import/no-unresolved": ["error", {
-      "ignore": ["display", "pdfjs", "pdfjs-lib", "pdfjs-web", "web"]
-    }],
-    "mozilla/avoid-removeChild": "error",
-    "mozilla/use-includes-instead-of-indexOf": "error",
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["display", "pdfjs", "pdfjs-lib", "pdfjs-web", "web"]
+      }
+    ],
     "no-unsanitized/method": "error",
     "no-unsanitized/property": "error",
-    "sort-exports/sort-exports": ["error", {
-      "ignoreCase": true,
-    }],
+    "sort-exports/sort-exports": [
+      "error",
+      {
+        "ignoreCase": true
+      }
+    ],
     "unicorn/no-abusive-eslint-disable": "error",
     "unicorn/no-array-push-push": "error",
     "unicorn/no-instanceof-array": "error",
     "unicorn/no-invalid-remove-event-listener": "error",
     "unicorn/no-new-buffer": "error",
-    "unicorn/no-typeof-undefined": ["error", {
-      "checkGlobalVariables": false,
-    }],
+    "unicorn/no-typeof-undefined": [
+      "error",
+      {
+        "checkGlobalVariables": false
+      }
+    ],
     "unicorn/no-useless-promise-resolve-reject": "error",
     "unicorn/no-useless-spread": "error",
     "unicorn/prefer-array-find": "error",
@@ -85,13 +90,13 @@
     "getter-return": "error",
     "no-async-promise-executor": "error",
     "no-cond-assign": ["error", "except-parens"],
-    "no-constant-condition": ["error", { "checkLoops": false, }],
+    "no-constant-condition": ["error", { "checkLoops": false }],
     "no-debugger": "error",
     "no-dupe-args": "error",
     "no-dupe-else-if": "error",
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
-    "no-empty": ["error", { "allowEmptyCatch": true, }],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
     "no-empty-character-class": "error",
     "no-ex-assign": "error",
     "no-extra-boolean-cast": "error",
@@ -110,16 +115,22 @@
     "no-unreachable": "error",
     "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
-    "no-unsafe-optional-chaining": ["error", { "disallowArithmeticOperators": true }],
+    "no-unsafe-optional-chaining": [
+      "error",
+      { "disallowArithmeticOperators": true }
+    ],
     "no-unused-private-class-members": "error",
-    "use-isnan": ["error", { "enforceForIndexOf": true, }],
-    "valid-typeof": ["error", { "requireStringLiterals": true, }],
+    "use-isnan": ["error", { "enforceForIndexOf": true }],
+    "valid-typeof": ["error", { "requireStringLiterals": true }],
 
     // Best Practices
-    "accessor-pairs": ["error", {
-      "setWithoutGet": true,
-      "enforceForClassMembers": true,
-    }],
+    "accessor-pairs": [
+      "error",
+      {
+        "setWithoutGet": true,
+        "enforceForClassMembers": true
+      }
+    ],
     "consistent-return": "error",
     "curly": ["error", "all"],
     "default-case-last": "error",
@@ -162,9 +173,13 @@
     "prefer-promise-reject-errors": "error",
     "prefer-spread": "error",
     "wrap-iife": ["error", "any"],
-    "yoda": ["error", "never", {
-      "exceptRange": true,
-    }],
+    "yoda": [
+      "error",
+      "never",
+      {
+        "exceptRange": true
+      }
+    ],
 
     // Strict Mode
     "strict": ["off", "global"],
@@ -175,71 +190,88 @@
     "no-shadow": "error",
     "no-shadow-restricted-names": "error",
     "no-undef-init": "error",
-    "no-undef": ["error", { "typeof": true, }],
-    "no-unused-vars": ["error", {
-      "vars": "all",
-      "args": "none",
-    }],
-    "no-use-before-define": ["error", {
-      "functions": false,
-      "classes": false,
-      "variables": false,
-    }],
+    "no-undef": ["error", { "typeof": true }],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": false,
+        "variables": false
+      }
+    ],
 
     // Stylistic Issues
     "lines-between-class-members": ["error", "always"],
-    "max-len": ["error", {
-      "code": 1000,
-      "comments": 80,
-      "ignoreUrls": true
-    }],
-    "new-cap": ["error", { "newIsCap": true, "capIsNew": false, }],
+    "max-len": [
+      "error",
+      {
+        "code": 1000,
+        "comments": 80,
+        "ignoreUrls": true
+      }
+    ],
+    "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
     "no-array-constructor": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 1, }],
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 1, "maxEOF": 0, "maxBOF": 1 }
+    ],
     "no-nested-ternary": "error",
     "no-new-object": "error",
-    "no-restricted-syntax": ["error",
+    "no-restricted-syntax": [
+      "error",
       {
         "selector": "BinaryExpression[operator='instanceof'][right.name='Object']",
-        "message": "Use `typeof` rather than `instanceof Object`.",
+        "message": "Use `typeof` rather than `instanceof Object`."
       },
       {
         "selector": "CallExpression[callee.name='assert'][arguments.length!=2]",
-        "message": "`assert()` must always be invoked with two arguments.",
+        "message": "`assert()` must always be invoked with two arguments."
       },
       {
         "selector": "CallExpression[callee.name='isCmd'][arguments.length<2]",
-        "message": "Use `instanceof Cmd` rather than `isCmd()` with one argument.",
+        "message": "Use `instanceof Cmd` rather than `isCmd()` with one argument."
       },
       {
         "selector": "CallExpression[callee.name='isDict'][arguments.length<2]",
-        "message": "Use `instanceof Dict` rather than `isDict()` with one argument.",
+        "message": "Use `instanceof Dict` rather than `isDict()` with one argument."
       },
       {
         "selector": "CallExpression[callee.name='isName'][arguments.length<2]",
-        "message": "Use `instanceof Name` rather than `isName()` with one argument.",
+        "message": "Use `instanceof Name` rather than `isName()` with one argument."
       },
       {
         "selector": "NewExpression[callee.name='Cmd']",
-        "message": "Use `Cmd.get()` rather than `new Cmd()`.",
+        "message": "Use `Cmd.get()` rather than `new Cmd()`."
       },
       {
         "selector": "NewExpression[callee.name='Name']",
-        "message": "Use `Name.get()` rather than `new Name()`.",
+        "message": "Use `Name.get()` rather than `new Name()`."
       },
       {
         "selector": "NewExpression[callee.name='Ref']",
-        "message": "Use `Ref.get()` rather than `new Ref()`.",
-      },
+        "message": "Use `Ref.get()` rather than `new Ref()`."
+      }
     ],
     "no-unneeded-ternary": "error",
     "operator-assignment": "error",
     "prefer-exponentiation-operator": "error",
-    "spaced-comment": ["error", "always", {
-      "block": {
-        "balanced": true,
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "block": {
+          "balanced": true
+        }
       }
-    }],
+    ],
 
     // ECMAScript 6
     "constructor-super": "error",
@@ -253,13 +285,20 @@
     "no-useless-constructor": "error",
     "no-useless-rename": "error",
     "no-var": "error",
-    "object-shorthand": ["error", "always", {
-      "avoidQuotes": true,
-    }],
+    "object-shorthand": [
+      "error",
+      "always",
+      {
+        "avoidQuotes": true
+      }
+    ],
     "prefer-const": "error",
-    "sort-imports": ["error", {
-      "ignoreCase": true,
-    }],
-    "template-curly-spacing": ["error", "never"],
-  },
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true
+      }
+    ],
+    "template-curly-spacing": ["error", "never"]
+  }
 }
