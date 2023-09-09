@@ -1,4 +1,4 @@
-import * as core from "../src/index.js";
+import * as core from "../index.js";
 import { promises as fs } from "fs";
 
 test("try test", async () => {
