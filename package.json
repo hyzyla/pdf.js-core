@@ -1,5 +1,8 @@
 {
-  "name": "pdf.js-core",
+  "name": "@hyzyla/pdfjs-core",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.1",
   "devDependencies": {
     "@babel/core": "^7.22.15",
